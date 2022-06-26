@@ -1,7 +1,6 @@
-const colorBlack = '#000';
-const colorWhite = '#fff';
-
-export default {
-  colorBlack,
-  colorWhite
+const variables = {
+  colorBlack: '#000',
+  colorWhite: '#fff'
 };
+
+export default variables;

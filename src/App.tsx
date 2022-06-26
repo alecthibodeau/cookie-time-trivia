@@ -10,7 +10,7 @@ import appStyles from './styles/app-styles';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={window.location.pathname === '/' ? '' : process.env.PUBLIC_URL}>
       <div>
         <div css={appStyles.mainDiv}>
           <h1>
