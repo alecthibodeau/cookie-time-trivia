@@ -19,6 +19,7 @@ import triviaItems from './constants/trivia-items';
 import themes from './styles/themes-styles';
 
 export default function App() {
+  const [baseName, setBaseName] = useState<string>('/');
   const [bestScore, setBestScore] = useState<HighScore | null>(null);
   const [appThemeName, setAppThemeName] = useState<string | null>(null);
   const [appTheme, setAppTheme] = useState<Theme | null>(null);
@@ -26,6 +27,10 @@ export default function App() {
   const bestScoreMessage = bestScore ? `Your best score so far was ${bestScore.count}
   out of ${bestScore.questionsQuantity} questions, which you got on ${bestScore.date}.` :
   'You don\'t have a best score.';
+
+  useEffect(() => {
+    if (window.location.pathname !== '/') setBaseName(process.env.PUBLIC_URL);
+  }, []);
 
   useEffect(() => {
     const storedScore = localStorage.getItem(localStorageKeyBestScore);
@@ -59,7 +64,7 @@ export default function App() {
   }
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={baseName}>
       <div css={appTheme?.appFontFamily}>
         <Header
           highScore={bestScore}
