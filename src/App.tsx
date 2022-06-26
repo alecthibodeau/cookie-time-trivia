@@ -4,33 +4,74 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 /* Components */
 import Game from './components/Game';
+import Header from './components/Header';
 import Home from './components/Home';
 
-/* Styles */
-import appStyles from './styles/app-styles';
+/* Interfaces */
+import HighScore from './interfaces/HighScore';
+import Theme from './interfaces/Theme';
 
-function App() {
-  const [baseName, setBaseName] = useState<string>('/');
+/* Constants */
+import { categoryNames, localStorageKeyBestScore } from './constants/app-constants';
+import triviaItems from './constants/trivia-items';
+
+/* Styles */
+import themes from './styles/themes-styles';
+
+export default function App() {
+  const [bestScore, setBestScore] = useState<HighScore | null>(null);
+  const [appThemeName, setAppThemeName] = useState<string | null>(null);
+  const [appTheme, setAppTheme] = useState<Theme | null>(null);
+
+  const bestScoreMessage = bestScore ? `Your best score so far was ${bestScore.count}
+  out of ${bestScore.questionsQuantity} questions, which you got on ${bestScore.date}.` :
+  'You don\'t have a best score.';
 
   useEffect(() => {
-    if (window.location.pathname !== '/') setBaseName(process.env.PUBLIC_URL);
+    const storedScore = localStorage.getItem(localStorageKeyBestScore);
+    if (storedScore) {
+      setBestScore(JSON.parse(storedScore));
+    }
+    setAppThemeName('placid');
   }, []);
 
+  useEffect(() => {
+    if (appThemeName) {
+      setAppTheme(themes[appThemeName]);
+    }
+  }, [appThemeName]);
+
+  function renderGameRoutes(categoryName: string) {
+    return (
+      <Route
+        key={`${categoryName}Category`}
+        path={`/game/${categoryName}`}
+        element={
+          <Game
+            highScore={bestScore}
+            highScoreMessage={bestScoreMessage}
+            onUpdateBestScore={setBestScore}
+            theme={appTheme}
+            category={triviaItems[categoryName]}></Game>
+        }
+      />
+    )
+  }
+
   return (
-    <BrowserRouter basename={baseName}>
-      <div>
-        <div>
-          <h1>
-            Cookie Time Trivia
-          </h1>
-        </div>
+    <BrowserRouter>
+      <div css={appTheme?.appFontFamily}>
+        <Header
+          highScore={bestScore}
+          highScoreMessage={bestScoreMessage}
+          onUpdateBestScore={setBestScore}
+          theme={appTheme}
+          onUpdateThemeName={setAppThemeName}></Header>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path={'game/geology'} element={<Game></Game>} />
+          {categoryNames.map(renderGameRoutes)}
         </Routes>
       </div>
     </BrowserRouter>
   );
 }
-
-export default App;

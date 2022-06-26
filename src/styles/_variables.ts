@@ -16,8 +16,8 @@ const variables = {
 
   /* Theme Colors */
 
-  colorPlacidBlue: '#017377',
-  colorPlacidBlueDark: '#005558',
+  colorPlacidBlue: '#005875',
+  colorPlacidBlueDark: '#004359',
   colorPlacidPink: '#d703fc',
 
   colorBloomMagenta: '#aa0944',
