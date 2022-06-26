@@ -19,7 +19,7 @@ import triviaItems from './constants/trivia-items';
 import themes from './styles/themes-styles';
 
 export default function App() {
-  const [baseName, setBaseName] = useState<string>('/');
+  const [baseUrl, setBaseUrl] = useState<string>('/');
   const [bestScore, setBestScore] = useState<HighScore | null>(null);
   const [appThemeName, setAppThemeName] = useState<string | null>(null);
   const [appTheme, setAppTheme] = useState<Theme | null>(null);
@@ -29,7 +29,9 @@ export default function App() {
   'You don\'t have a best score.';
 
   useEffect(() => {
-    if (window.location.pathname !== '/') setBaseName(process.env.PUBLIC_URL);
+    if (window.location.pathname !== '/') {
+      setBaseUrl(process.env.PUBLIC_URL);
+    }
   }, []);
 
   useEffect(() => {
@@ -64,7 +66,7 @@ export default function App() {
   }
 
   return (
-    <BrowserRouter basename={baseName}>
+    <BrowserRouter basename={baseUrl}>
       <div css={appTheme?.appFontFamily}>
         <Header
           highScore={bestScore}

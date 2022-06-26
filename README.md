@@ -1,6 +1,6 @@
 # Cookie Time Trivia
 
-## Gameplay For the User
+## The User Experience
 
 Cookie Time Trivia rewards you with a cookie for each correct answer.
 There are multiple trivia categories from which to choose. Each game consists of five questions. Your best score is saved. If you tie your best score then the earlier score remains your best score. The game includes a Settings modal, allowing you to choose a visual theme and reset your best score.
