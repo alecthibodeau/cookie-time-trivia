@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/cookie-time-trivia/static/css/main.a10df26c.css",
-    "main.js": "/cookie-time-trivia/static/js/main.2314c11e.js",
+    "main.js": "/cookie-time-trivia/static/js/main.da8a816a.js",
     "index.html": "/cookie-time-trivia/index.html",
     "main.a10df26c.css.map": "/cookie-time-trivia/static/css/main.a10df26c.css.map",
-    "main.2314c11e.js.map": "/cookie-time-trivia/static/js/main.2314c11e.js.map"
+    "main.da8a816a.js.map": "/cookie-time-trivia/static/js/main.da8a816a.js.map"
   },
   "entrypoints": [
     "static/css/main.a10df26c.css",
-    "static/js/main.2314c11e.js"
+    "static/js/main.da8a816a.js"
   ]
 }
