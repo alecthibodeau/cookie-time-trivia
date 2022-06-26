@@ -2,7 +2,7 @@ const appStyles = {
 
   mainDiv: {
     padding: '1rem',
-    backgroundColor: '#0ff',
+    backgroundColor: '#f00',
     borderRadius: '1rem'
   }
 }

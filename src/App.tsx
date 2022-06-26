@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 /* Components */
@@ -9,8 +10,14 @@ import Home from './components/Home';
 import appStyles from './styles/app-styles';
 
 function App() {
+  const [baseName, setBaseName] = useState<string>('/');
+
+  useEffect(() => {
+    if (window.location.pathname !== '/') setBaseName(process.env.PUBLIC_URL);
+  }, []);
+
   return (
-    <BrowserRouter basename={window.location.pathname === '/' ? '' : process.env.PUBLIC_URL}>
+    <BrowserRouter basename={baseName}>
       <div>
         <div css={appStyles.mainDiv}>
           <h1>
