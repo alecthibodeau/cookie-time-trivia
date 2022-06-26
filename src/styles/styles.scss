@@ -1,4 +1,49 @@
-h1 {
-    background-color: #000;
-    color: #fff;
+@use './_variables' as *;
+
+.game-board {
+  max-width: $breakpoint-md;
+}
+
+.choices {
+  flex-direction: column;
+}
+
+.next-question-button-container {
+  justify-content: center;
+}
+
+.progress-bar-inner {
+  animation: progress-bar-fill 2s ease-in 1;
+}
+
+/* Icons */
+
+.material-symbols-outlined {
+  font-size: 2rem;
+  font-variation-settings: 'FILL' 1, 'wght' 200;
+}
+
+/* Keyframes */
+
+@keyframes progress-bar-fill {
+
+  from {
+    width: 0%;
+  }
+  to  {
+    width: 100%;
+  }
+}
+
+/* Media Queries */
+
+@media (min-width: $breakpoint-sm) {
+
+  .choices {
+    flex-direction: row;
+  }
+
+  .next-question-button-container {
+    justify-content: flex-start;
+  }
 }

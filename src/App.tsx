@@ -19,7 +19,7 @@ function App() {
   return (
     <BrowserRouter basename={baseName}>
       <div>
-        <div css={appStyles.mainDiv}>
+        <div>
           <h1>
             Cookie Time Trivia
           </h1>
