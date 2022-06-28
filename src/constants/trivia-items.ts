@@ -39,7 +39,7 @@ const triviaItems: TriviaItems = {
       ]
     },
     {
-      question: 'Which of these three are major types of rock?',
+      question: 'Which three of these are major types of rock?',
       choices: [
         {
           text: 'Rubella'
@@ -158,7 +158,7 @@ const triviaItems: TriviaItems = {
       ]
     },
     {
-      question: 'What\s the largest member of the dolphin family?',
+      question: 'What\'s the largest member of the dolphin family?',
       choices: [
         {
           text: 'Killer whale',
