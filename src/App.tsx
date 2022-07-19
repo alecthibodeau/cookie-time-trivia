@@ -16,7 +16,7 @@ import { categoryNames, localStorageKeyBestScore } from './constants/app-constan
 import triviaItems from './constants/trivia-items';
 
 /* Styles */
-import themes from './styles/themes-styles';
+import themesStyles from './styles/themes-styles';
 
 export default function App() {
   const [baseUrl, setBaseUrl] = useState<string>('/');
@@ -44,7 +44,7 @@ export default function App() {
 
   useEffect(() => {
     if (appThemeName) {
-      setAppTheme(themes[appThemeName]);
+      setAppTheme(themesStyles[appThemeName]);
     }
   }, [appThemeName]);
 

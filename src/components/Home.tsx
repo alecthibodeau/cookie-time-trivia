@@ -58,6 +58,10 @@ function Home() {
           Your best score is saved. If you tie your best score then the earlier score remains your best score.
         </div>
       </div>
+      <div css={[homeStyles.projectInformation, {textAlign: 'center'}]}>
+          See the React/TypeScript code at <a href="https://github.com/alecthibodeau/cookie-time-trivia">GitHub</a><br />
+          <a href="https://alect.me">Alec Thibodeau</a>, 2022
+      </div>
     </div>
   );
 }

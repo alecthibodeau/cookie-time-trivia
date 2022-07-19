@@ -38,6 +38,10 @@ const homeStyles = {
 
   gameplayTitle: {
     marginBottom: '.5rem'
+  },
+
+  projectInformation: {
+    margin: '1rem'
   }
 };
 

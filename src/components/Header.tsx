@@ -14,7 +14,7 @@ import { localStorageKeyBestScore, themeNames } from '../constants/app-constants
 /* Styles */
 import appStyles from '../styles/app-styles';
 import headerStyles from '../styles/header-styles';
-import themes from '../styles/themes-styles';
+import themesStyles from '../styles/themes-styles';
 
 function Header(props: HeaderProps) {
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
@@ -49,11 +49,11 @@ function Header(props: HeaderProps) {
         name={`choose ${themeName} theme`}
         css={[
           appStyles.buttonPrimary,
-          themes[themeName].buttonPrimary,
+          themesStyles[themeName].buttonPrimary,
           headerStyles.settingsThemeButton,
           {
             textTransform: 'capitalize',
-            '&:hover': {backgroundColor: themes[themeName].colorShade}
+            '&:hover': {backgroundColor: themesStyles[themeName].colorShade}
           }
         ]}
         onClick={() => onClickSetThemeName(themeName)}>

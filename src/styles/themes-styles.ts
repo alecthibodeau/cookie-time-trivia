@@ -4,7 +4,7 @@ import variables from './_variables';
 /* Interfaces */
 import Themes from '../interfaces/Themes';
 
-const themes: Themes = {
+const themesStyles: Themes = {
 
   placid: {
     appFontFamily: {
@@ -67,4 +67,4 @@ const themes: Themes = {
   }
 }
 
-export default themes;
+export default themesStyles;
