@@ -59,7 +59,8 @@ export default function App() {
             highScoreMessage={bestScoreMessage}
             onUpdateBestScore={setBestScore}
             theme={appTheme}
-            category={triviaItems[categoryName]}></Game>
+            category={triviaItems[categoryName]}
+          />
         }
       />
     )
@@ -73,7 +74,8 @@ export default function App() {
           highScoreMessage={bestScoreMessage}
           onUpdateBestScore={setBestScore}
           theme={appTheme}
-          onUpdateThemeName={setAppThemeName}></Header>
+          onUpdateThemeName={setAppThemeName}
+        />
         <Routes>
           <Route path="/" element={<Home />} />
           {categoryNames.map(renderGameRoutes)}

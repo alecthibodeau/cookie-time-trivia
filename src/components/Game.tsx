@@ -76,7 +76,8 @@ function Game(props: GameProps) {
         key={discItem + discIndex}
         item={discItem}
         index={discIndex}
-        score={currentScoreCount}></ResultsImageDisc>
+        score={currentScoreCount}
+      />
     )
   }
 
@@ -106,7 +107,7 @@ function Game(props: GameProps) {
           questionNumber={currentQuestionNumber}
           scoreCount={currentScoreCount}
           totalQuestions={totalNumberOfQuestions}
-        ></Score>
+        />
         <Question
           questionCount={currentQuestionNumber}
           scoreCount={currentScoreCount}
@@ -115,7 +116,7 @@ function Game(props: GameProps) {
           onUpdateIsAnsweredStatus={setIsCurrentQuestionAnswered}
           onUpdateScore={setCurrentScoreCount}
           triviaItems={props.category}
-        ></Question>
+        />
         {isGameActive && !isUserAtLastQuestion &&
         <div className="next-question-button-container" css={gameStyles.nextQuestionButtonContainer}>
           <button
