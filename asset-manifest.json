@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/cookie-time-trivia/static/css/main.66be184f.css",
-    "main.js": "/cookie-time-trivia/static/js/main.0020456e.js",
+    "main.js": "/cookie-time-trivia/static/js/main.d2a60dbd.js",
     "index.html": "/cookie-time-trivia/index.html",
     "static/media/sad-face.svg": "/cookie-time-trivia/static/media/sad-face.41977df2edebdd036debfbb0770b3241.svg",
     "static/media/cookie-illustration.svg": "/cookie-time-trivia/static/media/cookie-illustration.2160ce87f7e129f72f8a17bcc6e90d84.svg",
     "main.66be184f.css.map": "/cookie-time-trivia/static/css/main.66be184f.css.map",
-    "main.0020456e.js.map": "/cookie-time-trivia/static/js/main.0020456e.js.map"
+    "main.d2a60dbd.js.map": "/cookie-time-trivia/static/js/main.d2a60dbd.js.map"
   },
   "entrypoints": [
     "static/css/main.66be184f.css",
-    "static/js/main.0020456e.js"
+    "static/js/main.d2a60dbd.js"
   ]
 }
