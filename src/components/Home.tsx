@@ -59,8 +59,7 @@ function Home() {
         </div>
       </div>
       <div css={[homeStyles.projectInformation, {textAlign: 'center'}]}>
-          See the React/TypeScript code at <a href="https://github.com/alecthibodeau/cookie-time-trivia">GitHub</a><br />
-          <a href="https://alect.me">Alec Thibodeau</a>, {new Date().getFullYear()}
+        <a href="https://alect.me">Alec Thibodeau</a>, {new Date().getFullYear()}
       </div>
     </div>
   );

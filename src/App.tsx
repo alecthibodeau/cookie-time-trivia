@@ -19,20 +19,15 @@ import triviaItems from './constants/trivia-items';
 import themesStyles from './styles/themes-styles';
 
 export default function App() {
-  const [baseUrl, setBaseUrl] = useState<string>('/');
   const [bestScore, setBestScore] = useState<HighScore | null>(null);
   const [appThemeName, setAppThemeName] = useState<string | null>(null);
   const [appTheme, setAppTheme] = useState<Theme | null>(null);
 
+  const baseURL: string = window.location.pathname !== '/' ? '/cookie-time-trivia/' : '/';
+
   const bestScoreMessage = bestScore ? `Your best score so far was ${bestScore.count}
   out of ${bestScore.questionsQuantity} questions, which you got on ${bestScore.date}.` :
   'You don\'t have a best score.';
-
-  useEffect(() => {
-    if (window.location.pathname !== '/') {
-      setBaseUrl(process.env.PUBLIC_URL);
-    }
-  }, []);
 
   useEffect(() => {
     const storedScore = localStorage.getItem(localStorageKeyBestScore);
@@ -67,7 +62,7 @@ export default function App() {
   }
 
   return (
-    <BrowserRouter basename={baseUrl}>
+    <BrowserRouter basename={baseURL}>
       <div css={appTheme?.appFontFamily}>
         <Header
           highScore={bestScore}
